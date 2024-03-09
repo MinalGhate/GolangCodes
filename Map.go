@@ -50,19 +50,64 @@ import "fmt"
 
 //**********looping in map
 
-func main() {
-	num := map[int]int{3: 9, 2: 4, 4: 16, 5: 25, 6: 26}
-	fmt.Println(num)
+// func main() {
+// 	num := map[int]int{3: 9, 2: 4, 4: 16, 5: 25, 6: 26}
+// 	fmt.Println(num)
 
-	for key, value := range num {
-		fmt.Printf("Key: %d and value: %d\n", key, value)
-	}
-	fmt.Println()
-	for _, value := range num {
-		fmt.Printf("value: %d\n", value)
-	}
-	fmt.Println()
-	for key, _ := range num {
-		fmt.Printf("key: %d\n", key)
-	}
+// 	for key, value := range num {
+// 		fmt.Printf("Key: %d and value: %d\n", key, value)
+// 	}
+// 	fmt.Println()
+// 	for _, value := range num {
+// 		fmt.Printf("value: %d\n", value)
+// 	}
+// 	fmt.Println()
+// 	for key, _ := range num {
+// 		fmt.Printf("key: %d\n", key)
+// 	}
+
+// 	for key := range num {
+// 		fmt.Println(key)
+// 	}
+// }
+
+//************make //memory allocation
+// func main() {
+// 	// student := make(map[int]string)
+
+// 	// student[1] = "John"
+// 	// student[2] = "Selena"
+// 	// student[3] = "harry"
+
+// 	// fmt.Println(student)
+
+// 	stu := make(map[string]string)
+
+// 	stu["one"] = "John"
+// 	stu["two"] = "Harry"
+// 	fmt.Println(stu)
+// }
+
+//********Map of using structure
+
+type Vertex struct {
+	latitude, longitude float64
+}
+
+var m = map[string]Vertex{
+	"Bell Labs": Vertex{
+		40.6843, -3.3473865,
+	},
+	"Google": Vertex{
+		54.3748267, -38.367865,
+	},
+}
+
+func main() {
+	fmt.Println(m)
+	fmt.Println(m["Google"])
+
+	m["Nagpur"] = Vertex{34.436, 3.4536}
+
+	fmt.Println(m)
 }
